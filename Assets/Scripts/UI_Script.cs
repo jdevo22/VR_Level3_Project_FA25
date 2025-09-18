@@ -5,12 +5,12 @@ public class UI_Script : MonoBehaviour
 {
     [Header("UI References")]
     public Image background;              // Main background for the note display
-    public Image leftSymbolSlot;          // UI slot for left-hand symbols
-    public Image rightSymbolSlot;         // UI slot for right-hand symbols
+    public RawImage leftSymbolSlot;          // UI slot for left-hand symbols
+    public RawImage rightSymbolSlot;         // UI slot for right-hand symbols
 
     [Header("Symbol Sets")]
-    public Sprite[] leftHandSymbols;      // 27 sprites for left-hand (indexes 0–26)
-    public Sprite[] rightHandSymbols;     // 27 sprites for right-hand (indexes 27–53)
+    public Texture[] leftHandSymbols;      // 27 Textures for left-hand (indexes 0–26)
+    public Texture[] rightHandSymbols;     // 27 Textures for right-hand (indexes 27–53)
 
     [Header("Display Options")]
     public bool showBackground = true;
@@ -32,15 +32,15 @@ public class UI_Script : MonoBehaviour
             background.enabled = showBackground;
 
         // Clear both slots first
-        if (leftSymbolSlot != null) leftSymbolSlot.sprite = null;
-        if (rightSymbolSlot != null) rightSymbolSlot.sprite = null;
+        if (leftSymbolSlot != null) leftSymbolSlot.texture = null;
+        if (rightSymbolSlot != null) rightSymbolSlot.texture = null;
 
         // Left-hand symbols
         if (index < 27)
         {
             if (leftSymbolSlot != null && index < leftHandSymbols.Length)
             {
-                leftSymbolSlot.sprite = leftHandSymbols[index];
+                leftSymbolSlot.texture = leftHandSymbols[index];
                 leftSymbolSlot.enabled = true;
             }
         }
@@ -50,7 +50,7 @@ public class UI_Script : MonoBehaviour
             int rightIndex = index - 27;
             if (rightSymbolSlot != null && rightIndex < rightHandSymbols.Length)
             {
-                rightSymbolSlot.sprite = rightHandSymbols[rightIndex];
+                rightSymbolSlot.texture = rightHandSymbols[rightIndex];
                 rightSymbolSlot.enabled = true;
             }
         }
