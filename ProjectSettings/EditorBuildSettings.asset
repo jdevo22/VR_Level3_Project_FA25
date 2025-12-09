@@ -8,12 +8,24 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Kai Jason Combined.unity
     guid: 3c16359e49d24244697a4b8785d1b0b1
   - enabled: 0
     path: Assets/Scenes/Kai Work Scene.unity
     guid: 738b625f18e617f43bedc21e7a07c0ed
+  - enabled: 1
+    path: Assets/Scenes/_FINAL SCENES/StartMenu.unity
+    guid: 82a5c61621c40ab4c9561683c4b8ac72
+  - enabled: 1
+    path: Assets/Scenes/_FINAL SCENES/LABAN CONES.unity
+    guid: 9f1d59c3470bfbd4a8cf9b4ae92149c7
+  - enabled: 1
+    path: Assets/Scenes/_FINAL SCENES/LABAN CUBES.unity
+    guid: dcd48a2144725db4fafcdfcf7612f85f
+  - enabled: 1
+    path: Assets/Scenes/_FINAL SCENES/TIM PATH PROJECTION.unity
+    guid: 21f4fc7925a980d45add1f5dc9ba4e93
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

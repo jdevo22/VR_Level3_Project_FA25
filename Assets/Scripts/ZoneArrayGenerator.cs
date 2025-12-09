@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class LabanotationZoneGenerator : MonoBehaviour
 {
+    public GameManager gameManager;
+
     [Header("Zone Configuration")]
     [Tooltip("Prefab for the zone marker. Must have a 'Hitbox' component.")]
     public GameObject zonePrefab;
@@ -34,6 +36,7 @@ public class LabanotationZoneGenerator : MonoBehaviour
     // --- Private Fields ---
     private List<Hitbox> _generatedZones = new List<Hitbox>();
     private bool _isCalibrated = false;
+    private int hitboxId = 0;
 
 
     // --- Constant Data Arrays ---
@@ -146,6 +149,7 @@ public class LabanotationZoneGenerator : MonoBehaviour
         }
 
         Debug.Log($"Successfully generated {_generatedZones.Count} Labanotation Zones.");
+        UpdateGameManager();
     }
 
     /// <summary>
@@ -191,12 +195,22 @@ public class LabanotationZoneGenerator : MonoBehaviour
         newZoneObj.name = zoneName;
 
         // Get the hitbox component and add it to our list for management
-        Hitbox hitbox = newZoneObj.GetComponent<Hitbox>();
-        if (hitbox != null)
+        Hitbox hitbox = newZoneObj.GetComponentInChildren<Hitbox>();
+        if (hitbox != null && hitbox.id == -1)
         {
             // Optional: Initialize the hitbox with its name or other data
             // hitbox.Initialize(zoneName); 
             _generatedZones.Add(hitbox);
+            hitbox.id = hitboxId;
+            ++hitboxId;
+        }
+    }
+
+    public void UpdateGameManager()
+    {
+        for (int i = 0; i < _generatedZones.Count; ++i)
+        {
+            gameManager.hitboxes[i] = _generatedZones[i];
         }
     }
 }

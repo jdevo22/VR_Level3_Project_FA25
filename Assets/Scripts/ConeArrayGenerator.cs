@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
-using Unity.Android.Gradle;
 
 /// <summary>
 /// Generates 24 Labanotation "cone" zones.
@@ -82,14 +81,13 @@ public class LabanotationConeGenerator : MonoBehaviour
         // --- 1. SET STERNUM POSITION ---
         // Move the entire zone parent to exactly where the controller is right now.
 
-        /* parent.position = calibrationController.position; */
+        parent.position = calibrationController.position;
 
         // Optional: If you want the array to rotate to face the same way the player is facing,
         // you can uncomment the line below. Otherwise, it stays aligned with the world/room.
         
-        /* parent.rotation = Quaternion.Euler(0, calibrationController.eulerAngles.y, 0); */
+        parent.rotation = Quaternion.Euler(0, calibrationController.eulerAngles.y, 0);
 
-        parent.position = new Vector3(0, 1, 0);
         Debug.Log($"Sternum set to: {parent.position}");
 
         // --- 2. GENERATE ZONES ---
@@ -155,6 +153,7 @@ public class LabanotationConeGenerator : MonoBehaviour
     // (InstantiateZone is unchanged)
     private void InstantiateZone(string zoneName, Transform parent, Quaternion rotation, float length)
     {
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         GameObject newZoneObj = Instantiate(zonePrefab, parent);
         newZoneObj.transform.localPosition = Vector3.zero;
         newZoneObj.transform.localRotation = rotation;
