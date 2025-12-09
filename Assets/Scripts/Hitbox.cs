@@ -26,7 +26,10 @@ public class Hitbox : MonoBehaviour
         {
             isActiveTarget = true; // treat as always correct in test mode
         }
+    }
 
+    private void Start()
+    {
         if (id == -1)
         {
             Debug.LogWarning($"{gameObject.name} lacks an ID and will not function.");
@@ -67,7 +70,7 @@ public class Hitbox : MonoBehaviour
          SetColor(idleColor);
     }
 
-    private void SetColor(Color color)
+    public void SetColor(Color color)
     {
         if (meshRenderer != null)
             meshRenderer.material.color = color;

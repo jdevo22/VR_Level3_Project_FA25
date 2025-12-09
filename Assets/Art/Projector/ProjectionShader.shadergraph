@@ -853,8 +853,8 @@
     "m_ObjectId": "001c5cd9bf974d9d816c41aecc03e56d",
     "m_Title": "Normals",
     "m_Position": {
-        "x": -414.0000305175781,
-        "y": 313.0000305175781
+        "x": -414.0,
+        "y": 313.0
     }
 }
 
@@ -2522,7 +2522,7 @@
     "m_ObjectId": "4513a61e607d4d2d836cba1c5d2e7b51",
     "m_Title": "Base Floor Texture",
     "m_Position": {
-        "x": -997.9998779296875,
+        "x": -998.0,
         "y": -603.0
     }
 }
@@ -2900,8 +2900,8 @@
     "m_ObjectId": "5a8a49ddf41a47f2885da4c76f5dbc57",
     "m_Title": "Path -> Single Color",
     "m_Position": {
-        "x": -2005.999755859375,
-        "y": -51.000057220458987
+        "x": -2006.0,
+        "y": -51.0
     }
 }
 
@@ -5224,7 +5224,7 @@
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 1.0
+        "y": 2.0
     }
 }
 
@@ -5433,8 +5433,8 @@
     "m_ObjectId": "e7b73668cac343bba2d638db070840a8",
     "m_Title": "Rotation",
     "m_Position": {
-        "x": -3807.999755859375,
-        "y": 324.99993896484377
+        "x": -3808.0,
+        "y": 325.0
     }
 }
 
